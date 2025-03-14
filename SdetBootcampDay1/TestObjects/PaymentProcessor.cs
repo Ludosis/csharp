@@ -1,0 +1,30 @@
+﻿namespace SdetBootcampDay1.TestObjects
+{
+    public class PaymentProcessor
+    {
+        private readonly PaymentProcessorType paymentProcessorType;
+
+        public PaymentProcessor(PaymentProcessorType paymentProcessorType)
+        {
+            this.paymentProcessorType = paymentProcessorType;
+        }
+        /*
+        public PaymentProcessorType SetPaymentProcessor(PaymentProcessorType paymentProcessorType)
+        {
+            this.paymentProcessorType = paymentProcessorType;
+        }
+        */
+
+        public bool PayFor(OrderItem item, int quantity, PaymentProcessorType paymentProcessorType)
+        {
+            // With Stripe, you can pay for every order.
+            if (this.paymentProcessorType.Equals(PaymentProcessorType.Stripe))
+            {
+                return true;
+            }
+
+            // You can use PayPal only when ordering 5 items or less.
+            return quantity <= 5;
+        }
+    }
+}
