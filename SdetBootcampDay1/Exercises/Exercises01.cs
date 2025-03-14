@@ -16,7 +16,7 @@ namespace SdetBootcampDay1.Exercises
             /**
              * TODO: add an assertion that verifies that the resulting balance is 200.
              */
-            Assert.That(account.Balance, Is.EqualTo(202));
+            Assert.That(account.Balance, Is.EqualTo(200));
             /**
              * TODO: add an assertion that verifies that the resulting balance is greater than 199.
              */
